@@ -501,3 +501,17 @@ footer {
 .text-left {
     text-align: left;
 }
+
+.company-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.company-info h4 {
+    margin-bottom: 0;
+}
+
+.company-icon {
+    object-fit: contain;
+}
