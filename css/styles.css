@@ -166,7 +166,7 @@ section:nth-child(even) {
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
-    background: linear-gradient(45deg, #efe8e1, #ffffff); /* Added same gradient as project cards */
+    background: #f7f3ee;
     border-radius: 18px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
     transition: transform 0.15s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -208,7 +208,7 @@ section:nth-child(even) {
     flex: 1;
     min-width: 300px;
     max-width: 500px;
-    background: white;
+    background: linear-gradient(45deg, #efe8e1, #ffffff);
     padding: 30px;
     border-radius: 18px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
@@ -240,6 +240,15 @@ section:nth-child(even) {
 
 .skill-category li:last-child {
     border-bottom: none;
+}
+
+/* When sections are in even positions (light background) */
+section:nth-child(even) .experience-item {
+    background: linear-gradient(45deg, #ffffff, #efe8e1);
+}
+
+section:nth-child(even) .skill-category {
+    background: #f7f3ee;
 }
 
 /* Projects Section */
