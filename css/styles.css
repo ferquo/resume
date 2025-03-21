@@ -313,7 +313,7 @@ section:nth-child(even) .skill-category {
 .contact-link {
     display: inline-block;
     padding: 16px 30px;
-    background-color: #0071e3;
+    background-color: #1B3557;
     color: #fff;
     text-decoration: none;
     border-radius: 980px;
@@ -324,7 +324,7 @@ section:nth-child(even) .skill-category {
 }
 
 .contact-link:hover {
-    background-color: #0077ed;
+    background-color: #254677;
     transform: scale(1.05);
 }
 
