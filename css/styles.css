@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@700&display=swap');
+
 /* Base Styles */
 * {
     margin: 0;
@@ -62,7 +64,6 @@ section:nth-child(even) {
     color: #fff;
 }
 
-/* Add subtle mocha swirl effect */
 .hero::before {
     content: "";
     position: absolute;
@@ -80,6 +81,8 @@ section:nth-child(even) {
 .hero-title, .hero-subtitle, .hero-text, .hero-scroll {
     position: relative;
     z-index: 2;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    font-weight: 700;
 }
 
 /* Updated Hero Section Font Sizes and Thickness */
