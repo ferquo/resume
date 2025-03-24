@@ -462,9 +462,11 @@ section:nth-child(even) .skill-category {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .language-level {
+    margin-left: auto;
     color: #7c6755;
     font-size: 15px;
     font-style: italic;
@@ -675,4 +677,30 @@ footer {
     height: 24px;
     vertical-align: middle;
     margin-right: 8px;
+}
+
+.education-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.education-item i {
+    color: #7c6755;  /* Changed to match the mocha theme */
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.education-details {
+    flex: 1;
+}
+
+.education-details h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+.education-details p {
+    margin: 0.25rem 0;
+    color: var(--text-secondary);
 }
