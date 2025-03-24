@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Reveal animations on scroll
-    const revealElements = document.querySelectorAll('.experience-item, .skill-category, .project-card');
+    const revealElements = document.querySelectorAll('.experience-item, .skill-category, .personal-card');
     
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
