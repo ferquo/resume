@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 /* Base Styles */
 * {
@@ -78,28 +79,41 @@ section:nth-child(even) {
     z-index: 1;
 }
 
-.hero-title, .hero-subtitle, .hero-text, .hero-scroll {
+.hero-title, .hero-subtitle, .hero-text {
     position: relative;
     z-index: 2;
-    font-family: 'IBM Plex Sans Condensed', sans-serif;
-    font-weight: 700;
+    font-family: 'Luckiest Guy', cursive;
+    text-transform: uppercase;
+    text-shadow: 
+        -2px -2px 0 #7c6755,  /* top-left */
+        2px -2px 0 #7c6755,   /* top-right */
+        -2px 3px 0 #7c6755,   /* bottom-left */
+        2px 3px 0 #7c6755,    /* bottom-right */
+        0 -2px 0 #7c6755,     /* top */
+        0 3px 0 #7c6755,      /* bottom */
+        -2px 0 0 #7c6755,     /* left */
+        2px 0 0 #7c6755;      /* right */
 }
 
-/* Updated Hero Section Font Sizes and Thickness */
+.hero-scroll {
+    position: relative;
+    z-index: 2;
+    font-family: 'Luckiest Guy', cursive;
+    text-transform: uppercase;
+}
+
 .hero-title {
     font-size: 80px; /* Increased from 72px */
     font-weight: 700; /* Changed from 600 */
     line-height: 1.1;
     letter-spacing: -0.003em;
     margin-bottom: 16px;
-    text-shadow: 1px 1px 2px rgba(58, 44, 33, 0.6);
 }
 
 .hero-subtitle {
     font-size: 36px; /* Increased from 32px */
     font-weight: 500; /* Changed from 400 */
     margin-bottom: 24px;
-    text-shadow: 1px 1px 2px rgba(58, 44, 33, 0.5);
 }
 
 .hero-text {
@@ -108,7 +122,6 @@ section:nth-child(even) {
     max-width: 600px;
     margin: 0 auto;
     margin-bottom: 16px;
-    text-shadow: 1px 1px 1px rgba(58, 44, 33, 0.4);
 }
 
 .hero-scroll {
@@ -419,11 +432,15 @@ footer {
     }
     
     .hero-title {
-        font-size: 48px;
+        font-size: 64px;  /* Changed from 48px for more subtle reduction */
     }
     
     .hero-subtitle {
-        font-size: 24px;
+        font-size: 32px;  /* Changed from 24px for more subtle reduction */
+    }
+    
+    .hero-text {
+        font-size: 22px;  /* Changed from 18px for more subtle reduction */
     }
     
     .experience-item h3 {
@@ -449,11 +466,11 @@ footer {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 36px;
+        font-size: 52px;  /* Changed from 36px for more subtle reduction */
     }
     
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 28px;  /* Changed from 18px for more subtle reduction */
     }
     
     .section-title {
@@ -465,7 +482,7 @@ footer {
     }
 
     .hero-text {
-        font-size: 16px;
+        font-size: 20px;  /* Changed from 16px for more subtle reduction */
     }
 
     .hero {
