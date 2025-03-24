@@ -383,10 +383,9 @@ section:nth-child(even) .skill-category {
 
 .personal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+    align-items: start;
 }
 
 .personal-card {
@@ -395,9 +394,6 @@ section:nth-child(even) .skill-category {
     border-radius: 18px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
     transition: transform 0.15s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     will-change: transform;
     cursor: pointer;
 }
@@ -408,10 +404,15 @@ section:nth-child(even) .skill-category {
 }
 
 .personal-card h3 {
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 20px;
     color: #3a2c21;
-    text-align: left;
+}
+
+.personal-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* Remove the decorative underline since other cards don't have it */
@@ -419,24 +420,14 @@ section:nth-child(even) .skill-category {
     display: none;
 }
 
-.personal-card ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-grow: 1;
-}
-
-.personal-card li {
-    padding: 12px 0;
-    border-bottom: 1px solid #efe8e1;
-    font-size: 17px;
-}
-
 /* Update education styles to match other cards */
 .education-item {
     padding: 12px 0;
     border-bottom: 1px solid #efe8e1;
     margin-bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
 .education-item:last-child {
@@ -444,14 +435,24 @@ section:nth-child(even) .skill-category {
     padding-bottom: 0;
 }
 
-.education-item h4 {
+.education-item i {
+    color: #7c6755;
+    font-size: 1.2rem;
+    margin-top: 0.25rem;
+}
+
+.education-details {
+    flex: 1;
+}
+
+.education-details h4 {
     font-size: 17px;
     color: #3a2c21;
     margin-bottom: 4px;
     font-weight: 600;
 }
 
-.education-item p {
+.education-details p {
     font-size: 16px;
     color: #9a8777;
     margin: 0;
@@ -459,10 +460,18 @@ section:nth-child(even) .skill-category {
 }
 
 .language-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #efe8e1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
+    font-size: 17px;
+}
+
+.language-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .language-level {
@@ -476,9 +485,17 @@ section:nth-child(even) .skill-category {
 }
 
 .hobby-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #efe8e1;
     display: flex;
     align-items: center;
     gap: 12px;
+    font-size: 17px;
+}
+
+.hobby-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .hobby-item i {
