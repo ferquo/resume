@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Preview Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap">
+    <style>
+        .preview-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .controls {
+            margin-bottom: 2rem;
+        }
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+        .canvas-container canvas {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+        }
+        .download-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .download-btn {
+            padding: 0.5rem 1rem;
+            background-color: #1B3557;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .download-btn:hover {
+            background-color: #254677;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <h1>Social Media Preview Generator</h1>
+        <div class="canvas-container">
+            <canvas id="previewCanvas"></canvas>
+        </div>
+        <div class="download-links">
+            <a href="#" id="downloadTwitter" class="download-btn">Download Twitter Image (1200x630)</a>
+            <a href="#" id="downloadFacebook" class="download-btn">Download Facebook Image (1200x630)</a>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('previewCanvas');
+        const ctx = canvas.getContext('2d');
+        const portrait = new Image();
+        portrait.src = 'images/portrait.png';
+
+        function generatePreview(width, height) {
+            canvas.width = width;
+            canvas.height = height;
+
+            // Draw background gradient
+            const gradient = ctx.createLinearGradient(0, 0, width, height);
+            gradient.addColorStop(0, '#9a8070');
+            gradient.addColorStop(0.5, '#c0aa98');
+            gradient.addColorStop(1, '#b39683');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+
+            // Calculate portrait size and position first
+            const portraitSize = height * 0.8;
+            const portraitX = width - portraitSize - width * 0.1;
+            const portraitY = (height - portraitSize) / 2;
+            
+            // Calculate text area width to avoid overlap
+            const textAreaWidth = portraitX - width * 0.15; // Leave some space between text and image
+
+            // Add text shadow effect
+            function addTextShadow(text, x, y, fontSize, maxWidth) {
+                ctx.font = `${fontSize}px "Luckiest Guy"`;
+                const shadowColor = '#7c6755';
+                const shadowOffset = 2;
+                
+                // Draw shadow
+                ctx.fillStyle = shadowColor;
+                ctx.fillText(text, x - shadowOffset, y - shadowOffset, maxWidth);
+                ctx.fillText(text, x + shadowOffset, y - shadowOffset, maxWidth);
+                ctx.fillText(text, x - shadowOffset, y + shadowOffset, maxWidth);
+                ctx.fillText(text, x + shadowOffset, y + shadowOffset, maxWidth);
+                
+                // Draw main text
+                ctx.fillStyle = '#fff';
+                ctx.fillText(text, x, y, maxWidth);
+            }
+
+            // Apply text shadows with maximum width - adjusted Y positions to be more centered
+            addTextShadow('FERENC PATO', width * 0.1, height * 0.45, 72, textAreaWidth);
+            addTextShadow('SENIOR SOFTWARE DEVELOPER', width * 0.1, height * 0.6, 36, textAreaWidth);
+
+            // Draw portrait
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(portraitX + portraitSize/2, portraitY + portraitSize/2, portraitSize/2, 0, Math.PI * 2);
+            ctx.clip();
+            ctx.drawImage(portrait, portraitX, portraitY, portraitSize, portraitSize);
+            ctx.restore();
+        }
+
+        // Set up download handlers
+        function setupDownload(buttonId, width, height) {
+            document.getElementById(buttonId).addEventListener('click', function(e) {
+                e.preventDefault();
+                generatePreview(width, height);
+                const link = document.createElement('a');
+                link.download = `preview-${width}x${height}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        }
+
+        // Wait for font and image to load
+        Promise.all([
+            document.fonts.load('72px "Luckiest Guy"'),
+            new Promise(resolve => {
+                portrait.onload = resolve;
+            })
+        ]).then(() => {
+            setupDownload('downloadTwitter', 1200, 630);
+            setupDownload('downloadFacebook', 1200, 630);
+            // Generate initial preview
+            generatePreview(1200, 630);
+        });
+    </script>
+</body>
+</html>
