@@ -4,6 +4,7 @@ import { resolve } from 'path';
 export default defineConfig({
   base: '/',
   build: {
+    sourcemap: false,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
@@ -11,5 +12,9 @@ export default defineConfig({
       },
     },
   },
+  esbuild: {
+    // Strip all comments in JS output and drop debug code
+    legalComments: 'none',
+    drop: ['console', 'debugger'],
+  },
 });
-
