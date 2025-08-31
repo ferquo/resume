@@ -62,4 +62,76 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // This will be useful if you add navigation later
     window.addEventListener('scroll', highlightCurrentSection);
+
+    // GSAP hero text animations with ScrambleText
+    try {
+        // Ensure GSAP is available (loaded via CDN in index.html)
+        if (typeof gsap !== 'undefined') {
+            // Register ScrambleTextPlugin when available
+            if (typeof ScrambleTextPlugin !== 'undefined') {
+                gsap.registerPlugin(ScrambleTextPlugin);
+            }
+
+            const nameEl = document.querySelector('.hero-name');
+            const roleEl = document.querySelector('.hero-role');
+            const subtitleEl = document.querySelector('.hero-subtitle');
+            const imageEl = document.querySelector('.hero-image img');
+            const scrollEl = document.querySelector('.hero-scroll');
+
+            const nameText = nameEl?.textContent?.trim() || '';
+            const roleText = roleEl?.textContent?.trim() || '';
+            const subtitleText = subtitleEl?.textContent?.trim() || '';
+
+            // Pre-state: hide text and image slightly for a composed entrance
+            gsap.set([nameEl, roleEl, subtitleEl], { opacity: 0 });
+            gsap.set(imageEl, { opacity: 0, y: 20 });
+            gsap.set(scrollEl, { opacity: 0, y: 10 });
+
+            const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+            // Helper to animate one element with ScrambleText if plugin exists; otherwise fade-in
+            const scrambleTo = (el, text, duration = 1.2, overlap = '+=0.1') => {
+                if (!el) return tl;
+                // Clear existing text to avoid flicker
+                const original = text || '';
+                el.textContent = '';
+
+                if (typeof ScrambleTextPlugin !== 'undefined') {
+                    tl.to(el, {
+                        duration,
+                        opacity: 1,
+                        scrambleText: {
+                            text: original,
+                            chars: 'upperAndLowerCase',
+                            speed: 0.38,
+                            revealDelay: 0.1
+                        }
+                    }, overlap);
+                } else {
+                    // Graceful fallback: simple fade-in with text set immediately
+                    el.textContent = original;
+                    tl.to(el, { duration: duration * 0.5, opacity: 1 }, overlap);
+                }
+                return tl;
+            };
+
+            // Bring in portrait
+            if (imageEl) {
+                tl.to(imageEl, { duration: 0.6, opacity: 1, y: 0 }, 0);
+            }
+
+            // Sequence hero texts
+            scrambleTo(nameEl, nameText, 1.1, 0.1);
+            scrambleTo(roleEl, roleText, 1.0, '>-0.1');
+            scrambleTo(subtitleEl, subtitleText, 1.0, '>-0.1');
+
+            // Subtle reveal for scroll indicator
+            if (scrollEl) {
+                tl.to(scrollEl, { duration: 0.5, opacity: 1, y: 0 }, '>-0.2');
+            }
+        }
+    } catch (e) {
+        // Fail silently to avoid breaking other interactions
+        console.error('GSAP hero animation error:', e);
+    }
 });
