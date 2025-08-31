@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // This will be useful if you add navigation later
     window.addEventListener('scroll', highlightCurrentSection);
 
-    // GSAP hero text animations with ScrambleText
+    // GSAP hero text animations with ScrambleText (flashier)
     try {
         // Ensure GSAP is available (loaded via CDN in index.html)
         if (typeof gsap !== 'undefined') {
@@ -89,29 +89,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-            // Helper to animate one element with ScrambleText if plugin exists; otherwise fade-in
-            const scrambleTo = (el, text, duration = 1.2, overlap = '+=0.1') => {
+            // Flashier two-stage scramble with a quick glow/glitch
+            const flashyScramble = (el, text, startAt = '+=0') => {
                 if (!el) return tl;
-                // Clear existing text to avoid flicker
                 const original = text || '';
-                el.textContent = '';
+
+                // Per-element sub-timeline so we can overlap nicely
+                const stl = gsap.timeline();
+                stl.set(el, { opacity: 0, y: 8, filter: 'blur(3px)' });
 
                 if (typeof ScrambleTextPlugin !== 'undefined') {
-                    tl.to(el, {
-                        duration,
+                    // Tiny glow flicker while initial scramble kicks in
+                    stl.fromTo(el,
+                        { textShadow: '0 0 0 rgba(255,255,255,0)' },
+                        { textShadow: '0 0 16px rgba(255,255,255,0.35)', duration: 0.14, yoyo: true, repeat: 1 },
+                        0
+                    );
+
+                    // Stage 1: punchy symbol-based scramble
+                    stl.to(el, {
+                        duration: 0.45,
                         opacity: 1,
+                        y: 0,
+                        filter: 'blur(0px)',
+                        scrambleText: {
+                            text: original,
+                            chars: 'symbols',
+                            speed: 1.1,
+                            revealDelay: 0.08,
+                            tweenLength: true
+                        }
+                    }, 0);
+
+                    // Stage 2: refine with letters to a clean reveal
+                    stl.to(el, {
+                        duration: 0.7,
                         scrambleText: {
                             text: original,
                             chars: 'upperAndLowerCase',
-                            speed: 0.38,
-                            revealDelay: 0.1
+                            speed: 0.55,
+                            revealDelay: 0.04
                         }
-                    }, overlap);
+                    }, '>-0.12');
                 } else {
-                    // Graceful fallback: simple fade-in with text set immediately
+                    // Graceful fallback: simple reveal
                     el.textContent = original;
-                    tl.to(el, { duration: duration * 0.5, opacity: 1 }, overlap);
+                    stl.to(el, { duration: 0.5, opacity: 1, y: 0, filter: 'blur(0px)' }, 0);
                 }
+
+                tl.add(stl, startAt);
                 return tl;
             };
 
@@ -120,10 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 tl.to(imageEl, { duration: 0.6, opacity: 1, y: 0 }, 0);
             }
 
-            // Sequence hero texts
-            scrambleTo(nameEl, nameText, 1.1, 0.1);
-            scrambleTo(roleEl, roleText, 1.0, '>-0.1');
-            scrambleTo(subtitleEl, subtitleText, 1.0, '>-0.1');
+            // Sequence hero texts with tighter overlaps for energy
+            flashyScramble(nameEl, nameText, '+=0.05');
+            flashyScramble(roleEl, roleText, '>-0.15');
+            flashyScramble(subtitleEl, subtitleText, '>-0.12');
 
             // Subtle reveal for scroll indicator
             if (scrollEl) {
