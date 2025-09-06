@@ -53,10 +53,20 @@ section:nth-child(even) {
     gap: 2rem;
     justify-content: center;
     text-align: left;
-    background: url('../images/blob-bg.svg'), linear-gradient(to right, #9a8070, #c0aa98, #b39683);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    /* Grid + radial orb overlay using existing palette (no Tailwind) */
+    background-color: #9a8070; /* base tint behind gradients */
+    background-image:
+        /* grid columns */
+        linear-gradient(to right, rgba(124, 103, 85, 0.15) 1px, transparent 1px),
+        /* grid rows */
+        linear-gradient(to bottom, rgba(124, 103, 85, 0.15) 1px, transparent 1px),
+        /* soft orb glow */
+        radial-gradient(circle at 50% 60%, rgba(179, 150, 131, 0.18) 0%, rgba(154, 128, 112, 0.08) 40%, transparent 70%),
+        /* existing mocha gradient base */
+        linear-gradient(to right, #9a8070, #c0aa98, #b39683);
+    background-size: 40px 40px, 40px 40px, 100% 100%, cover;
+    background-position: top left, top left, center center, center center;
+    background-repeat: repeat, repeat, no-repeat, no-repeat;
     position: relative;
     overflow: hidden;
     color: #fff;
