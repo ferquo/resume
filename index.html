@@ -1,100 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferenc Pato - Senior Software Engineer | Full Stack Developer</title>
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Senior Software Engineer specializing in .NET, Angular, and React development. Experienced in building scalable solutions with modern technologies.">
-    <meta name="keywords" content="Ferenc Pato, Software Engineer, Full Stack Developer, .NET Developer, Angular Developer, React Developer, Software Architecture">
+    <meta name="description"
+        content="Senior Software Engineer specializing in .NET, Angular, and React development. Experienced in building scalable solutions with modern technologies.">
+    <meta name="keywords"
+        content="Ferenc Pato, Software Engineer, Full Stack Developer, .NET Developer, Angular Developer, React Developer, Software Architecture">
     <meta name="author" content="Ferenc Pato">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ferencpato.com/">
     <meta property="og:title" content="Ferenc Pato - Senior Software Engineer">
-    <meta property="og:description" content="Senior Software Engineer specializing in .NET, Angular, and React development. Building scalable & impactful solutions.">
+    <meta property="og:description"
+        content="Senior Software Engineer specializing in .NET, Angular, and React development. Building scalable & impactful solutions.">
     <meta property="og:image" content="images/preview-1200x630.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ferencpato.com/">
     <meta property="twitter:title" content="Ferenc Pato - Senior Software Engineer">
-    <meta property="twitter:description" content="Senior Software Engineer specializing in .NET, Angular, and React development. Building scalable & impactful solutions.">
+    <meta property="twitter:description"
+        content="Senior Software Engineer specializing in .NET, Angular, and React development. Building scalable & impactful solutions.">
     <meta property="twitter:image" content="images/preview-1200x630.png">
-    
+
     <link rel="icon" type="image/png" href="images/favico.png">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap">
+    <!-- Editorial Fonts: Playfair Display (Headers), Inter (Body), Cinzel (Accents/Dates) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="canonical" href="https://ferencpato.com/">
 </head>
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <nav class="hero-cta hero-cta-top">
-            <a href="#about" class="link-pill compact">About</a>
-            <a href="#skills" class="link-pill compact">Skills</a>
-            <a href="#experience" class="link-pill compact">Experience</a>
-            <a href="#personal" class="link-pill compact">Personal</a>
-            <a href="#contact" class="link-pill compact">Contact</a>
-        </nav>
-        <div class="hero-content hero-image">
-            <img src="images/portrait2.png" alt="Portrait of Ferenc Pato">
-        </div>
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="hero-name">Ferenc Pato</span>
-                <span class="hero-role">Senior Software Engineer</span>
-            </h1>
-            <p class="hero-subtitle">AI-forward, product-driven.</p>
-            
-            <div class="hero-scroll">
-                <a href="#about" class="scroll-indicator">
-                    <span>Scroll to explore</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text text-left">
-                    <p class="mb-4">I am a Senior Software Developer with extensive experience in .NET, ASP.NET, Angular, and React. Passionate about software architecture and best coding practices, I enjoy building scalable, high-performance applications that deliver real value to users.</p>
-                    <p class="mb-4">Currently at Visma, I focus on both frontend and backend development, contributing to well-structured and maintainable solutions. I am highly product-driven and thrive in collaborative environments, working closely with teams to create efficient and user-centric software.</p>
-                    <p class="mb-4">Beyond coding, I am constantly deepening my skills by reading about new technologies, architectural patterns, and industry trends, ensuring that I stay ahead in an ever-evolving field.</p>
+<body>
+    <div class="paper-texture"></div>
+
+    <!-- Magazine Masthead -->
+    <header class="masthead fade-in">
+        <div class="masthead-top">
+            <span class="issue-date">Est. 2012</span>
+            <span class="issue-number">Vol. XII</span>
+            <span class="issue-price">Senior Engineer Edition</span>
+        </div>
+        <div class="masthead-title">
+            <h1>The Developer</h1>
+        </div>
+        <div class="masthead-divider">
+            <div class="separator-line"></div>
+            <span class="masthead-subtitle">Ferenc Pato &mdash; Full Stack Software Engineer</span>
+            <div class="separator-line"></div>
+        </div>
+    </header>
+
+    <main class="editorial-container">
+        <!-- Lead Story (About & Hero Image) -->
+        <article class="lead-story fade-in">
+            <div class="lead-image-container">
+                <img src="images/portrait2.png" alt="Ferenc Pato Portrait" class="lead-image">
+                <div class="image-caption">Snapshot: Transforming complex requirements into scalable solutions.</div>
+            </div>
+            <div class="lead-content">
+                <h2 class="headline-large">AI-Forward, Product-Driven Engineering</h2>
+                <div class="article-meta">
+                    <span class="author">By AI Narrator</span>
+                    <span class="read-time">2 min read</span>
+                </div>
+                <div class="drop-cap-text">
+                    <p>I am a Senior Software Developer with extensive experience in .NET, ASP.NET, Angular, and React.
+                        Passionate about software architecture and best coding practices, I enjoy building scalable,
+                        high-performance applications that deliver real value to users.</p>
+                    <p>Currently at Visma, I focus on both frontend and backend development, contributing to
+                        well-structured and maintainable solutions. I am highly product-driven and thrive in
+                        collaborative environments.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </article>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category fade-in">
-                    <h3>Back-end Development</h3>
+        <div class="editorial-line-break">***</div>
+
+        <div class="editorial-grid">
+            <!-- Left Column: Skills as "The Toolbox" -->
+            <aside class="sidebar-left fade-in">
+                <div class="sidebar-header">
+                    <h3>The Toolbox</h3>
+                    <div class="mini-separator"></div>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Backend Engine</h4>
                     <ul>
                         <li>ASP.NET Core / C#</li>
                         <li>SQL / Entity Framework</li>
-                        <li>Cosmos DB / mongo DB / Neo4J</li>
+                        <li>Cosmos DB / Mongo / Neo4J</li>
                         <li>Azure Cloud Services</li>
                         <li>Docker</li>
                     </ul>
                 </div>
-                <div class="skill-category fade-in">
-                    <h3>Front-end Development</h3>
+
+                <div class="skill-group">
+                    <h4>Frontend Interface</h4>
                     <ul>
                         <li>Angular / NgRx</li>
                         <li>React / MobX</li>
@@ -103,194 +119,132 @@
                         <li>MaterialUI / Bootstrap</li>
                     </ul>
                 </div>
-                <div class="skill-category fade-in">
-                    <h3>Soft skills</h3>
+
+                <div class="skill-group">
+                    <h4>Soft Skills</h4>
                     <ul>
                         <li>Product Thinking</li>
-                        <li>Ownership & Accountability</li>
-                        <li>Problem-Solving & Critical Thinking</li>
-                        <li>Adaptability & Learning Mindset</li>
-                        <li>Decision-Making & Prioritization</li>
+                        <li>Ownership</li>
+                        <li>Problem-Solving</li>
+                        <li>Adaptability</li>
+                        <li>Prioritization</li>
                     </ul>
                 </div>
-            </div>
+
+                <div class="ad-space">
+                    <div class="ad-content">
+                        <span>Advertisement</span>
+                        <p>Your Next Senior Engineer could be right here.</p>
+                        <a href="#contact" class="ad-link">Inquire Now</a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center/Right Column: Experience as "Chronicles" -->
+            <section class="main-content fade-in" id="experience">
+                <div class="section-header-editorial">
+                    <h2>Career Chronicles</h2>
+                    <span class="section-subtitle">A Decade of Development</span>
+                </div>
+
+                <article class="job-entry featured">
+                    <span class="job-year">2023 &mdash; Present</span>
+                    <h3>Senior Software Engineer</h3>
+                    <div class="company-tag">Visma</div>
+                    <p class="drop-cap">W</p>
+                    <p>orking on mission-critical applications using .NET Core, Angular, and Azure cloud services.
+                        Implementing clean architecture principles and contributing to the development of scalable
+                        solutions. Focusing on cost optimization and automated deployment processes.</p>
+                </article>
+
+                <article class="job-entry">
+                    <span class="job-year">2020 &mdash; 2023</span>
+                    <h3>Fullstack Software Engineer</h3>
+                    <div class="company-tag">Dirico & Staffbase</div>
+                    <p>Led development of web services and applications using modern technologies. Developed web
+                        services using .NET Framework, .NET Core, and Azure. Built modern web applications using React,
+                        TypeScript, and MobX.</p>
+                </article>
+
+                <article class="job-entry">
+                    <span class="job-year">2015 &mdash; 2020</span>
+                    <h3>Software Developer</h3>
+                    <div class="company-tag">Nordlogic</div>
+                    <p>Full-stack development focusing on web applications and microservices. Developed web applications
+                        using .NET Framework, Node.js, and Angular. Implemented ORM solutions using Entity Framework.
+                    </p>
+                </article>
+
+                <div class="job-entry-group">
+                    <article class="job-entry small">
+                        <span class="job-year">2014 &mdash; 2015</span>
+                        <div class="company-tag">Trencadis</div>
+                        <h4>Software Developer</h4>
+                        <p>Specialized in developing applications for the public sector, focusing on SOLID principles.
+                        </p>
+                    </article>
+                    <article class="job-entry small">
+                        <span class="job-year">2012 &mdash; 2014</span>
+                        <div class="company-tag">Cylex</div>
+                        <h4>Software Developer</h4>
+                        <p>Developed and maintained company web applications using ASP.NET Web Forms and Oracle
+                            databases.</p>
+                    </article>
+                </div>
+            </section>
         </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            
-            <div class="experience-item fade-in">
-                <h3>Senior Software Engineer</h3>
-                <div class="company-info">
-                    <img src="images/visma-icon.png" alt="Visma logo" class="company-icon">
-                    <h4>Visma</h4>
-                </div>
-                <p class="date">2023 - Present</p>
-                <p>Working on mission-critical applications using .NET Core, Angular, and Azure cloud services. Implementing clean architecture principles and contributing to the development of scalable solutions. Focusing on cost optimization and automated deployment processes. Leading the development of new features and providing technical guidance to team members.</p>
-            </div>
+        <div class="editorial-line-break">***</div>
 
-            <div class="experience-item fade-in">
-                <h3>Fullstack Software Engineer</h3>
-                <div class="company-info">
-                    <img src="images/staffbase-icon.svg" alt="Staffbase logo" class="company-icon">
-                    <h4>Dirico and Staffbase</h4>
-                </div>
-                <p class="date">2020 - 2023</p>
-                <p>Led development of web services and applications using modern technologies. Key responsibilities and achievements include:</p>
-                <ul>
-                    <li>Developed web services using .NET Framework, .NET Core, Entity Framework, MSSQL, Redis, Elasticsearch, and SignalR on Microsoft Azure</li>
-                    <li>Built modern web applications using React, TypeScript, MaterialUI, MobX, and AngularJS</li>
-                    <li>Integrated support for various social media platforms (Pinterest, TikTok, Twitter) for content publishing and analytics syncing</li>
-                    <li>Implemented Office for the web support using WOPI protocol for in-browser document editing</li>
-                    <li>Conducted code reviews and maintained high quality standards</li>
-                    <li>Mentored less experienced developers and managed tradeoffs between business needs and engineering excellence</li>
-                </ul>
-            </div>
-
-            <div class="experience-item fade-in">
-                <h3>Software Developer</h3>
-                <div class="company-info">
-                    <img src="images/nordlogic-icon.png" alt="Nordlogic logo" class="company-icon">
-                    <h4>Nordlogic</h4>
-                </div>
-                <p class="date">2015 - 2020</p>
-                <p>Full-stack development focusing on web applications and microservices. Key technologies and responsibilities:</p>
-                <ul>
-                    <li>Developed web applications using .NET Framework, Node.js, NestJS, and Angular</li>
-                    <li>Worked with various databases including MSSQL, MongoDB, and Neo4J</li>
-                    <li>Implemented ORM solutions using Entity Framework and TypeORM</li>
-                    <li>Built RESTful web services and microservices, containerized with Docker</li>
-                    <li>Integrated message queuing systems using RabbitMQ</li>
-                </ul>
-            </div>
-
-            <div class="experience-item fade-in">
-                <h3>Software Developer</h3>
-                <div class="company-info">
-                    <img src="images/trencadis-icon.png" alt="Trencadis logo" class="company-icon">
-                    <h4>Trencadis</h4>
-                </div>
-                <p class="date">2014 - 2015</p>
-                <p>Specialized in developing applications for the public sector, focusing on:</p>
-                <ul>
-                    <li>Building enterprise-level applications following SOLID principles</li>
-                    <li>Implementing Unit of Work and other design patterns</li>
-                    <li>Developing solutions for public sector clients</li>
-                    <li>Applying object-oriented design principles</li>
-                </ul>
-            </div>
-
-            <div class="experience-item fade-in">
-                <h3>Software Developer</h3>
-                <div class="company-info">
-                    <img src="images/cylex-icon.png" alt="Cylex logo" class="company-icon">
-                    <h4>Cylex</h4>
-                </div>
-                <p class="date">2012 - 2014</p>
-                <p>Focused on web application development and maintenance:</p>
-                <ul>
-                    <li>Developed and maintained company web applications using ASP.NET Web Forms</li>
-                    <li>Programmed in C# and VB.NET</li>
-                    <li>Worked with Oracle databases</li>
-                    <li>Maintained and improved existing applications</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Personal Section -->
-    <section id="personal" class="personal">
-        <div class="container">
-            <h2 class="section-title">Personal</h2>
-            <div class="personal-grid">
-                <div class="personal-card fade-in">
+        <!-- Bottom Page: Life & Contact -->
+        <section class="lifestyle-section fade-in" id="personal">
+            <h2 class="lifestyle-title">Life & Culture</h2>
+            <div class="lifestyle-grid">
+                <div class="lifestyle-card">
                     <h3>Languages</h3>
-                    <ul>
-                        <li class="language-item">
-                            Romanian 🇷🇴 <span class="language-level">Native</span>
-                        </li>
-                        <li class="language-item">
-                            Hungarian 🇭🇺 <span class="language-level">Native</span>
-                        </li>
-                        <li class="language-item">
-                            English 🇬🇧 <span class="language-level">Professional</span>
-                        </li>
-                    </ul>
+                    <p><strong>Romanian</strong> (Native), <strong>Hungarian</strong> (Native), <strong>English</strong>
+                        (Professional)</p>
                 </div>
-
-                <div class="personal-card fade-in">
+                <div class="lifestyle-card">
                     <h3>Education</h3>
-                    <div class="education-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <div class="education-details">
-                            <h4>Masters in Distributed Systems in Internet</h4>
-                            <p>University of Oradea</p>
-                            <p>2013 - 2015</p>
-                        </div>
-                    </div>
-                    <div class="education-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <div class="education-details">
-                            <h4>Bachelor in Computer Science</h4>
-                            <p>University of Oradea</p>
-                            <p>2010 - 2013</p>
-                        </div>
-                    </div>
+                    <p>Masters in Distributed Systems in Internet <br> <span class="text-muted">Univ. of Oradea,
+                            2015</span></p>
+                    <p>Bachelor in Computer Science <br> <span class="text-muted">Univ. of Oradea, 2013</span></p>
                 </div>
-
-                <div class="personal-card fade-in">
-                    <h3>Hobbies</h3>
-                    <ul>
-                        <li class="hobby-item">
-                            <i class="fas fa-camera"></i>
-                            Digital Photography
-                        </li>
-                        <li class="hobby-item">
-                            <i class="fas fa-book"></i>
-                            Reading IT and Psychology Books
-                        </li>
-                        <li class="hobby-item">
-                            <i class="fas fa-gamepad"></i>
-                            Video Games
-                        </li>
-                    </ul>
+                <div class="lifestyle-card">
+                    <h3>Interests</h3>
+                    <p>Digital Photography, Reading (IT & Psych), Video Games</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-info">
-                <p>Interested in discussing potential opportunities? Reach out via LinkedIn or email.</p>
-                <div class="contact-links">
-                    <a href="https://www.linkedin.com/in/patoferenc/" class="contact-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="mailto:ferquo07@gmail.com" class="contact-link" target="_blank" rel="noopener noreferrer">
-                        <i class="far fa-envelope"></i> Email
-                    </a>
+    </main>
+
+    <!-- Footer / Colophon -->
+    <footer class="colophon" id="contact">
+        <div class="colophon-content">
+            <div class="colophon-brand">The Developer</div>
+            <div class="colophon-contact">
+                <p>Interested in collaboration?</p>
+                <div class="contact-links-editorial">
+                    <a href="https://www.linkedin.com/in/patoferenc/" target="_blank">LinkedIn</a>
+                    <span class="divider">|</span>
+                    <a href="mailto:ferquo07@gmail.com">Email</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>Brought to life by GitHub Copilot Agent. 90% AI, 100% vibes. I take credit for the good parts. #vibecoding</p>
+            <div class="colophon-fineprint">
+                <p>&copy; 2025 Ferenc Pato. Crafted with Vite & AI.</p>
+            </div>
         </div>
     </footer>
 
     <!-- GSAP core -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- ScrambleTextPlugin (Club GSAP demo build hosted by GreenSock for demos) -->
     <script src="https://assets.codepen.io/16327/ScrambleTextPlugin.min.js"></script>
     <script type="module" src="js/script.js"></script>
 </body>
+
 </html>
